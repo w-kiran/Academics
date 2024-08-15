@@ -1,0 +1,4 @@
+Brief Description of C
+
+C is a powerful and efficient language that allows for low-level system programming, making it an ideal choice for developing operating systems, device drivers, and other system-level software.
+C is a widely used language with a large and active community, which means there is a wealth of resources available for learning and getting help with programming challenges.

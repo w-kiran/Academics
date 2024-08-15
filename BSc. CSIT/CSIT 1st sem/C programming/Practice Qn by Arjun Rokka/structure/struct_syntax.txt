@@ -1,0 +1,23 @@
+Defining structure
+syntax:
+    struct structure_name{
+        data_type variable1
+        data_type variable1
+        data_type variable1........
+    };
+
+    int main(){
+        struct structure_name s1,s1,s3,......;
+    }
+
+And for accessing the structure member data 
+1. Using dot(.)
+2. Using arrow (->)
+
+
+for function
+Declaration:
+ return_type function_name(struct structure_name struct_variable[]);
+
+Call:
+ function_name(struct_variable);

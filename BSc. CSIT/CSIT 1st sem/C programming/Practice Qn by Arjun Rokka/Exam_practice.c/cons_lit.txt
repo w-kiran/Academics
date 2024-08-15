@@ -1,0 +1,22 @@
+Constant
+1.A constant is a value that cannot be changed during program execution. 
+2.Constants are often used to define values that are used repeatedly throughout a program.
+3.Constants are typically named using uppercase letters and underscores to separate words. (e.g. HIGH_VALUE).
+4.Constants can have different data types, such as interger, float, string ....
+5.Constants have a global scope and can be accessed from anywhere in the program.
+
+
+
+Literals 
+1.A literal is a value that is directly specified in the source code of a program.
+2.Literals are used to represent specific value or data types in a program.
+3.Literals are not named, as they are specified directly in the code.
+4.Literals can also have different data types depending on the value specified (e.g.18 is a integer literal, "Hello" is a string literal).
+5.Literals are local to the code block in which they are defined..
+
+
+
+We need to define the type of data because it helps to ensure memory efficiency, prevent errors, improve performance and enhance code readability.
+
+
+Conditional operator is also known as ternary operator which allow you to write compact Conditional expression.
