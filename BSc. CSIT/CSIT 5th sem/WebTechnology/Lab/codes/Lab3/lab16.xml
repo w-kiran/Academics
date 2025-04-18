@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<library>
+ <book> 
+<title>Harry Potter</title>
+<author>J.K. Rowling</author> 
+</book> 
+<book> 
+<title>The Alchemist</title>
+<author>Paulo Coelho</author>
+ </book> 
+</library>
+

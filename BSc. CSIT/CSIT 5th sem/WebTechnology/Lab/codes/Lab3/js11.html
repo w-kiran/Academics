@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q.11 Parse JSON with JavaScript</title>
+</head>
+<body>
+
+<script>
+    var jsonString = '{"name": "Kiran Joshi Sukubhattu", "age": 20, "city": "KTM", "skills": ["JavaScript", "HTML", "CSS"]}';
+    var parsedData = JSON.parse(jsonString);
+
+    // Writing output to the document
+    document.write("<p><strong>Name:</strong> " + parsedData.name + "</p>");
+    document.write("<p><strong>Age:</strong> " + parsedData.age + "</p>");
+    document.write("<p><strong>City:</strong> " + parsedData.city + "</p>");
+
+    // Displaying skills in a list format
+    document.write("<p><strong>Skills:</strong></p>");
+    document.write("<ul>");
+    parsedData.skills.forEach(function(skill) {
+        document.write("<li>" + skill + "</li>");
+    });
+    document.write("</ul>");
+</script>
+
+</body>
+</html>
+

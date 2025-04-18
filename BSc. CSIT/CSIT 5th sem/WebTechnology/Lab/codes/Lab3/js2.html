@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Q.2 Objects</title>
+ </head>
+ <body>
+ <script>
+ var person = {
+ name: 'Kiran Joshi Sukubhattu',
+ age: 20,
+ gender: 'Male',
+ };
+ function Car(make, model, year) {
+ this.make = make;
+ this.model = model;
+ this.year = year;
+ }
+ console.log('Person Object: ');
+ console.log('Name: ' + person.name);
+ console.log('Age: ' + person.age);
+ console.log('Gender: ' + person.gender);
+ var myCar = new Car('BMW', '7 Series', 2028);
+ console.log(myCar);
+ </script>
+ </body>
+</html>

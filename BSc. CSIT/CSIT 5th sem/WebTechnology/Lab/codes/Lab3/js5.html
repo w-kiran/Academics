@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            width: 300px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <div class="error" id="nameError"></div>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age">
+        <div class="error" id="ageError"></div>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone">
+        <div class="error" id="phoneError"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+        <div class="error" id="emailError"></div>
+
+        <label for="college">Select College:</label>
+        <select id="college">
+            <option value="">Select College</option>
+            <option value="TU">Tribhuvan University</option>
+            <option value="KU">Kathmandu University</option>
+            <option value="PU">Pokhara University</option>
+        </select>
+        <div class="error" id="collegeError"></div>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <div class="error" id="genderError"></div>
+
+        <label>
+            <input type="checkbox" id="terms"> I accept all the terms
+        </label>
+        <div class="error" id="termsError"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let valid = true;
+
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            let college = document.getElementById("college").value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let terms = document.getElementById("terms").checked;
+
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("ageError").textContent = "";
+            document.getElementById("phoneError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("collegeError").textContent = "";
+            document.getElementById("genderError").textContent = "";
+            document.getElementById("termsError").textContent = "";
+
+            if (!name.match(/^[A-Za-z\s]{7,}$/)) {
+                document.getElementById("nameError").textContent = "Name must contain only alphabets, spaces, and be at least 7 characters long.";
+                valid = false;
+            }
+
+            if (!age || age < 1 || age > 50 || isNaN(age)) {
+                document.getElementById("ageError").textContent = "Age must be a number between 1 and 50.";
+                valid = false;
+            }
+
+            if (!phone.match(/^(98|97)\d{8}$/)) {
+                document.getElementById("phoneError").textContent = "Phone must be 10 digits long and start with 98 or 97.";
+                valid = false;
+            }
+
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                document.getElementById("emailError").textContent = "Enter a valid email address.";
+                valid = false;
+            }
+
+            if (college === "") {
+                document.getElementById("collegeError").textContent = "Please select a college.";
+                valid = false;
+            }
+
+            if (!gender) {
+                document.getElementById("genderError").textContent = "Please select your gender.";
+                valid = false;
+            }
+
+            if (!terms) {
+                document.getElementById("termsError").textContent = "You must accept the terms.";
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Form submitted successfully!");
+            }
+        });
+    </script>
+
+</body>
+</html>
